@@ -27,7 +27,7 @@ public class App {
 
 					if (idiot && stupid) {
 						// 3の倍数でかつ3のつく1000以下の非負整数
-						System.out.println("dump");
+						System.out.println("dumb");
 					} else if(idiot) {
 						// 3の倍数の1000以下の非負整数
 						System.out.println("idiot");

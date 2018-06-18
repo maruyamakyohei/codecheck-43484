@@ -5,13 +5,10 @@ public class App {
 		for (int i = 0, l = args.length; i < l; i++) {
 
 			try {
-				// 全角文字の場合はExceptionをスローして「invalid」を出力
-				char[] chars = args[i].toCharArray();
-				for (int j = 0; j < chars.length; j++) {
-					if (String.valueOf(chars[j]).getBytes().length == 2) {
-						throw new Exception();
-			        }
-				}
+				// 全角文字を含む場合はExceptionをスローして「invalid」を出力
+				if (args[i].getBytes("Windows-31J").length != args[i].length()) {
+					throw new Exception();
+		        }
 
 				// 引数をint型に変換
 				int param = Integer.parseInt(args[i]);

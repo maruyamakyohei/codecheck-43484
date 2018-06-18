@@ -5,6 +5,14 @@ public class App {
 		for (int i = 0, l = args.length; i < l; i++) {
 
 			try {
+				// 全角文字の場合はExceptionをスローして「invalid」を出力
+				char[] chars = args[i].toCharArray();
+				for (int j = 0; j < chars.length; i++) {
+					if (String.valueOf(chars[j]).getBytes().length == 2) {
+						throw new Exception();
+			        }
+				}
+
 				// 引数をint型に変換
 				int param = Integer.parseInt(args[i]);
 
@@ -41,6 +49,9 @@ public class App {
 				}
 			} catch(NumberFormatException e) {
 				// NumberFormatException発生時は「invalid」を出力
+				System.out.println("invalid");
+			} catch(Exception e) {
+				// 全角文字が含まれていた場合は「invalid」を出力
 				System.out.println("invalid");
 			}
 

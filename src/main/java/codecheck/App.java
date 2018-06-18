@@ -7,7 +7,7 @@ public class App {
 			try {
 				// 全角文字の場合はExceptionをスローして「invalid」を出力
 				char[] chars = args[i].toCharArray();
-				for (int j = 0; j < chars.length; i++) {
+				for (int j = 0; j < chars.length; j++) {
 					if (String.valueOf(chars[j]).getBytes().length == 2) {
 						throw new Exception();
 			        }

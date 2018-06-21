@@ -3,7 +3,6 @@ package codecheck;
 public class App {
 	public static void main(String[] args) {
 		for (int i = 0, l = args.length; i < l; i++) {
-
 			try {
 				// 全角文字を含む場合はExceptionをスローして「invalid」を出力
 				if (args[i].getBytes("Windows-31J").length != args[i].length()) {
